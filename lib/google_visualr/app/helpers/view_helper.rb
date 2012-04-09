@@ -12,6 +12,7 @@ module GoogleVisualr
         helper_method "render_chart_without_script"
         helper_method "render_chart_with_callback"
         helper_method "render_chart_with_transition"
+        helper_method "render_chart_define_chart"
       end
 
       def render_chart(chart, dom)
@@ -32,6 +33,11 @@ module GoogleVisualr
 
 	  def render_chart_with_transition(chart, dom)
         chart.to_js_add_transition(dom).html_safe
+      end
+	  
+	  
+	  def render_chart_define_chart(chart, dom)
+        chart.to_js_define_chart(dom).html_safe
       end
 	  
     end

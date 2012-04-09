@@ -67,6 +67,15 @@ module GoogleVisualr
       js
     end
 	
+	
+	def to_js_define_chart(element_id)
+      js = "\n  google.load('visualization','1', {packages: ['#{package_name}'], callback: function() {"
+	  js << "\n    var chart = new google.visualization.#{class_name}(document.getElementById('#{element_id}'));"
+      js << "\n  }});"
+
+      js
+    end
+	
 	def to_js_add_callback(element_id)
       js = "\n  google.load('visualization','1', {packages: ['#{package_name}'], callback: function() {"
       js << "\n    #{@data_table.to_js}"
