@@ -70,7 +70,7 @@ module GoogleVisualr
 	
 	def to_js_define_chart(element_id)
       js = "\n  google.load('visualization','1', {packages: ['#{package_name}'], callback: function() {"
-	  js << "\n    var chart = new google.visualization.#{class_name}(document.getElementById('#{element_id}'));"
+	  js << "\n 	chart = new google.visualization.#{class_name}(document.getElementById('#{element_id}'));"
       js << "\n  }});"
 
       js
