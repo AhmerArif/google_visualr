@@ -58,6 +58,15 @@ module GoogleVisualr
       js
     end
 	
+	def to_js_add_transition(element_id)
+      js = "\n  google.load('visualization','1', {packages: ['#{package_name}'], callback: function() {"
+      js << "\n    #{@data_table.to_js}"
+      js << "\n    chart.draw(data_table, #{js_parameters(@options)});"
+      js << "\n  }});"
+
+      js
+    end
+	
 	def to_js_add_callback(element_id)
       js = "\n  google.load('visualization','1', {packages: ['#{package_name}'], callback: function() {"
       js << "\n    #{@data_table.to_js}"
@@ -68,6 +77,8 @@ module GoogleVisualr
 
       js
     end
+	
+	
 	
 
   end
